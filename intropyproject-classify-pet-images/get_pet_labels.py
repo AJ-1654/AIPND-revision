@@ -19,6 +19,7 @@
 # Imports python modules
 from os import listdir
 
+
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create 
 #       with this function
@@ -28,7 +29,8 @@ def get_pet_labels(image_dir):
     Creates a dictionary of pet labels (results_dic) based upon the filenames 
     of the image files. These pet image labels are used to check the accuracy 
     of the labels that are returned by the classifier function, since the 
-    filenames of the images contain the true identity of the pet in the image.
+    filenames of the images contain the true identity of the p
+    et in the image.
     Be sure to format the pet labels so that they are in all lower case letters
     and with leading and trailing whitespace characters stripped from them.
     (ex. filename = 'Boston_terrier_02259.jpg' Pet label = 'boston terrier')
@@ -42,4 +44,22 @@ def get_pet_labels(image_dir):
     """
     # Replace None with the results_dic dictionary that you created with this
     # function
-    return None
+    file_name_list = listdir(image_dir)
+    pet_label_list = list()
+    results_dic = dict()
+    for idx in range(len(file_name_list)):
+        temp = file_name_list[idx]
+        pet_name = ""
+        temp = temp.lower()
+        temp = temp.split("_")
+        for word in temp:
+            if word.isalpha():
+                pet_name += (word + " ")
+
+        pet_name = pet_name.strip()
+        pet_label_list.append(pet_name)
+
+    for idx in range(len(file_name_list)):
+        results_dic[file_name_list[idx]] = [pet_label_list[idx]]
+
+    return results_dic

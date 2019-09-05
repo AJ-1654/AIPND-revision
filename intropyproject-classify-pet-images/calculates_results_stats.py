@@ -67,7 +67,52 @@ def calculates_results_stats(results_dic):
                      and the value is the statistic's value. See comments above
                      and the classroom Item XX Calculating Results for details
                      on how to calculate the counts and statistics.
-    """        
+    """
     # Replace None with the results_stats_dic dictionary that you created with 
-    # this function 
-    return None
+    # this function
+
+    results_stats_dic = dict()
+    number_of_images = 0
+    number_of_correct_dog_matches = 0
+    number_of_dog_images = 0
+    number_of_correct_non_dog_matches = 0
+    number_of_not_dog_images = 0
+    number_of_correct_breed_matches = 0
+    number_of_matches = 0
+
+    for key in results_dic:
+        number_of_images += 1
+        if results_dic[key][3] == 1 and results_dic[key][4] == 1:
+            number_of_correct_dog_matches += 1
+
+        if results_dic[key][3] == 1:
+            number_of_dog_images += 1
+
+        if results_dic[key][3] == 0 and results_dic[key][4] == 0:
+            number_of_correct_non_dog_matches += 1
+
+        if results_dic[key][3] == 0:
+            number_of_not_dog_images += 1
+
+        if results_dic[key][3] == 1 and results_dic[key][2] == 1:
+            number_of_correct_breed_matches += 1
+
+        if results_dic[key][2] == 1:
+            number_of_matches += 1
+
+    p_of_correctly_classified_dog_images = (number_of_correct_dog_matches / number_of_dog_images) * 100
+    p_of_correctly_classified_not_dog_images = (number_of_correct_non_dog_matches / number_of_not_dog_images) * 100
+    p_of_correctly_classified_dog_breeds = (number_of_correct_breed_matches / number_of_dog_images) * 100
+
+    results_stats_dic["n_images"] = number_of_images
+    results_stats_dic["n_dogs_img"] = number_of_dog_images
+    results_stats_dic["n_notdogs_img"] = number_of_not_dog_images
+    results_stats_dic["n_match"] = number_of_matches
+    results_stats_dic["n_correct_dogs"] = number_of_correct_dog_matches
+    results_stats_dic["n_correct_notdogs"] = number_of_correct_non_dog_matches
+    results_stats_dic["n_correct_breed"] = number_of_correct_breed_matches
+    results_stats_dic["pct_correct_dogs"] = p_of_correctly_classified_dog_images
+    results_stats_dic["pct_correct_notdogs"] = p_of_correctly_classified_not_dog_images
+    results_stats_dic["pct_correct_breed"] = p_of_correctly_classified_dog_breeds
+
+    return results_stats_dic

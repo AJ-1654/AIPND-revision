@@ -1,0 +1,66 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = alexnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 3 key-value pairs.
+Below are 3 of them:
+ 1 key:                     Cat_01.jpg  label:                        cat
+ 2 key:                     Bat_01.jpg  label:                        bat
+ 3 key:              Rottweiler_01.jpg  label:                 rottweiler
+
+     MATCH:
+
+                    Cat_01.jpg: 
+Real:                        cat   Classifier:              egyptian cat, cat
+
+ NOT A MATCH:
+
+                    Bat_01.jpg: 
+Real:                        bat   Classifier: letter opener, paper knife, paperknife
+
+             Rottweiler_01.jpg: 
+Real:                 rottweiler   Classifier:                  gordon setter
+
+# Total Images 3 # Matches: 1 # NOT Matches: 2
+
+     MATCH:
+
+                    Cat_01.jpg: 
+Real:                        cat   Classifier:              egyptian cat, cat  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                    Bat_01.jpg: 
+Real:                        bat   Classifier: letter opener, paper knife, paperknife  
+PetLabelDog: 0  ClassLabelDog: 0
+
+             Rottweiler_01.jpg: 
+Real:                 rottweiler   Classifier:                  gordon setter  
+PetLabelDog: 1  ClassLabelDog: 1
+
+# Total Images 3 # Matches: 1 # NOT Matches: 2
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  3  N Dog Images:  1  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  3  N Dog Images:  1  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+
+*** Results Summary for CNN Model Architecture ALEXNET ***
+N Images            :   3
+N Dog Images        :   1
+N Not-Dog Images    :   2
+ 
+pct_correct_dogs    : 100.000000
+pct_correct_notdogs : 100.000000
+pct_correct_breed   : 0.000000
+
+INCORRECT Dog Breed Assignment:
+Real:                 rottweiler   Classifier:                  gordon setter
+
+** Total Elapsed Runtime: 0:0:0

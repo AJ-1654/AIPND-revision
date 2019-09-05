@@ -1,0 +1,63 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = vgg 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 3 key-value pairs.
+Below are 3 of them:
+ 1 key:                     Cat_01.jpg  label:                        cat
+ 2 key:                     Bat_01.jpg  label:                        bat
+ 3 key:              Rottweiler_01.jpg  label:                 rottweiler
+
+     MATCH:
+
+                    Cat_01.jpg: 
+Real:                        cat   Classifier:              egyptian cat, cat
+
+             Rottweiler_01.jpg: 
+Real:                 rottweiler   Classifier:                     rottweiler
+
+ NOT A MATCH:
+
+                    Bat_01.jpg: 
+Real:                        bat   Classifier:                      drumstick
+
+# Total Images 3 # Matches: 2 # NOT Matches: 1
+
+     MATCH:
+
+                    Cat_01.jpg: 
+Real:                        cat   Classifier:              egyptian cat, cat  
+PetLabelDog: 0  ClassLabelDog: 0
+
+             Rottweiler_01.jpg: 
+Real:                 rottweiler   Classifier:                     rottweiler  
+PetLabelDog: 1  ClassLabelDog: 1
+
+ NOT A MATCH:
+
+                    Bat_01.jpg: 
+Real:                        bat   Classifier:                      drumstick  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 3 # Matches: 2 # NOT Matches: 1
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  3  N Dog Images:  1  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  3  N Dog Images:  1  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed: 100.0
+
+
+*** Results Summary for CNN Model Architecture VGG ***
+N Images            :   3
+N Dog Images        :   1
+N Not-Dog Images    :   2
+ 
+pct_correct_dogs    : 100.000000
+pct_correct_notdogs : 100.000000
+pct_correct_breed   : 100.000000
+
+** Total Elapsed Runtime: 0:0:0
